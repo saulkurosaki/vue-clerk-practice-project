@@ -1,11 +1,16 @@
-import './assets/main.css'
+import "./assets/main.css";
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import { clerkPlugin } from "vue-clerk";
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
+app.use(router);
 
-app.mount('#app')
+app.use(clerkPlugin, {
+  publishableKey: import.meta.env.VITE_CLERK_PUBLISHABLE_KEY,
+});
+
+app.mount("#app");
