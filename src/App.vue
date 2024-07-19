@@ -18,5 +18,11 @@ import { RouterLink, RouterView } from "vue-router";
     </div>
   </header>
 
-  <RouterView />
+  <main class="container mx-auto">
+    <div class="flex items-center justify-center min-h-[calc(100dvh-80px)]">
+      <div>
+        <RouterView />
+      </div>
+    </div>
+  </main>
 </template>
