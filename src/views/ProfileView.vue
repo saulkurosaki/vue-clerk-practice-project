@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { UserProfile } from "vue-clerk";
+import { UserProfile, useAuth } from "vue-clerk";
+import { useMiddleware } from "../helpers/middleware.ts";
+
+const { isSignedIn } = useAuth();
+
+useMiddleware(isSignedIn.value);
 </script>
 
 <template>

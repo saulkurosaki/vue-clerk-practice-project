@@ -1,9 +1,10 @@
 <script setup lang="ts">
-// import { useAuth } from "vue-clerk";
+import { useAuth } from "vue-clerk";
+import { useMiddleware } from "../helpers/middleware.ts";
 
-// const { isSignedIn } = useAuth();
+const { isSignedIn } = useAuth();
 
-// if (!isSignedIn) router.push("/sign-in");
+useMiddleware(isSignedIn.value);
 </script>
 
 <template>
