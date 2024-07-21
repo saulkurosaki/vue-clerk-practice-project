@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+import { useAuth, UserButton, SignedIn } from "vue-clerk";
 </script>
 
 <template>
@@ -11,9 +12,16 @@ import { RouterLink, RouterView } from "vue-router";
       >
         ClerkVueAuth
       </div>
-      <nav class="flex items-center gap-10 text-white text-xl font-semibold">
-        <RouterLink to="/sign-in">SignIn</RouterLink>
-        <RouterLink to="/sign-up">SignUp</RouterLink>
+      <nav class="flex items-center gap-10">
+        <RouterLink to="/sign-in" class="text-white text-xl font-semibold"
+          >SignIn</RouterLink
+        >
+        <RouterLink to="/sign-up" class="text-white text-xl font-semibold"
+          >SignUp</RouterLink
+        >
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </nav>
     </div>
   </header>
